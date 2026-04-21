@@ -43,6 +43,49 @@
 
   .container { max-width: 1140px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
 
+  .hero-more {
+    margin-top: 1.2rem;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 1s forwards;
+  }
+  
+  .btn-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  
+    color: var(--text2);
+    text-decoration: none;
+  
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+  
+    transition: all 0.25s cubic-bezier(.2,.8,.2,1);
+  }
+  
+  .btn-more:hover {
+    color: var(--accent2);
+    border-color: var(--border2);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  }
+  
+  .btn-arrow {
+    transition: transform 0.2s;
+  }
+  
+  .btn-more:hover .btn-arrow {
+    transform: translateX(4px);
+  }
+
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     padding: 1.1rem 2.5rem;
