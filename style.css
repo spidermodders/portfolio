@@ -5,7 +5,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
 button,input{font:inherit}a{color:inherit}button,a{-webkit-tap-highlight-color:transparent}
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent2);outline-offset:5px}
 [hidden]{display:none!important}::selection{background:#665980;color:white}
-/* A continuous color wash across the whole viewport. */
+
 .background-gradient {
   position: fixed;
   inset: 0;
@@ -21,7 +21,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent2);outline-of
   to { background-position: 100% 65%; }
 }
 .background-mark{position:fixed;inset:0;z-index:0;display:grid;place-items:center;pointer-events:none;opacity:.19}
-.background-mark img{width:min(110vh,110vw,1100px);height:min(110vh,110vw,1100px);object-fit:contain}
+.background-mark svg{width:min(110vh,110vw,1100px);height:min(110vh,110vw,1100px);object-fit:contain}
 .container{width:100%;max-width:1200px;margin:auto;padding:0 48px;position:relative;z-index:1}
 nav{position:fixed;inset:0 0 auto;z-index:100;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:22px 40px;background:rgba(10,10,15,.45);border-bottom:1px solid var(--border);-webkit-backdrop-filter:blur(32px);backdrop-filter:blur(32px)}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){nav{background:#0a0a0f}}
@@ -30,6 +30,9 @@ nav{position:fixed;inset:0 0 auto;z-index:100;display:flex;justify-content:space
 .nav-links{display:flex;gap:24px}.nav-links a{color:var(--text2);text-decoration:none;font-size:12px;transition:color .2s}.nav-links a:hover{color:var(--text)}
 .hero{min-height:100svh;display:flex;align-items:center;padding:150px 0 90px;position:relative}
 .hero-inner{display:grid;grid-template-columns:1.2fr 1fr;align-items:center;gap:80px}
+
+.intro-pending .hero-inner,.intro-pending .background-mark svg{filter:blur(18px)}
+@media(prefers-reduced-motion:reduce){.intro-pending .hero-inner,.intro-pending .background-mark svg{filter:none}}
 .hero-eyebrow,.section-eyebrow,.practice-label{color:var(--text3);font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase}
 .hero-eyebrow{margin-bottom:22px}.hero-name{font-family:var(--display);font-weight:400;font-size:clamp(44px,5.3vw,68px);line-height:1.07;letter-spacing:-.055em}.hero-name span{color:var(--accent2)}
 .hero-tagline{color:var(--text2);font-size:16px;line-height:1.8;max-width:430px;margin-top:26px}.hero-tagline strong{font-weight:400;color:var(--text)}
@@ -59,7 +62,7 @@ footer{position:relative;z-index:1;padding:28px 24px;border-top:1px solid var(--
 @media(max-width:700px){nav{display:block;padding:14px 20px 10px}.nav-logo{margin-bottom:12px}.nav-links{gap:20px;overflow-x:auto;padding-bottom:4px}.nav-links a{font-size:11px;white-space:nowrap}.container{padding:0 22px}.hero{padding:150px 0 60px}.hero-inner,.about-grid,.plugins-grid{grid-template-columns:1fr}.hero-inner{gap:48px}.hero-name{font-size:clamp(38px,10vw,60px)}.hero-tagline{font-size:15px}.practice-title{max-width:none;font-size:26px}section{padding:56px 0}.section-header{flex-wrap:wrap;gap:12px 20px;margin-bottom:30px}.section-eyebrow{width:100%}.section-title{font-size:32px}.games-grid,.videos-grid{grid-template-columns:1fr;gap:28px}.video-title{min-height:0}.external-card{grid-template-columns:1fr;gap:18px;padding:24px}.plugin-card,.about-card{padding:24px}.contact-pill{padding:11px 13px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 
-/* Full-width Roblox launch buttons, matching the supplied reference. */
+
 .card-link{display:flex;align-items:center;justify-content:center;width:100%;min-height:60px;padding:14px;margin-top:20px;border:0;border-radius:8px;background:#3965ff;color:#eef0f6;transition:background .18s,box-shadow .18s}
 .card-link svg{width:32px;height:32px;display:block}
 .card-link:hover{background:#4b74ff;color:#fff}
